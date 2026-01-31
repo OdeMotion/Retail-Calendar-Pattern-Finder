@@ -153,24 +153,21 @@ This section explains exactly what the pipeline does and why.
 I aggregate transaction-level data to a daily grain:
 
 - **Revenue (daily)**  
-  \[
-  revenue_d = \sum_{t \in day(d)} total\_amount_t
-  \]
+
+<img width="376" height="80" alt="Screenshot 2026-01-31 at 15-41-36 GitHub Profile Analysis" src="https://github.com/user-attachments/assets/a17b2493-132a-4d10-873c-790bea30bd6f" />
 
 - **Transactions (daily)**  
-  \[
-  txns_d = \#\{transaction\_id \text{ on day } d\}
-  \]
+
+<img width="421" height="46" alt="Screenshot 2026-01-31 at 15-41-52 GitHub Profile Analysis" src="https://github.com/user-attachments/assets/d68e76a7-5b55-4744-9b37-b01b7d595680" />
 
 - **Units (daily)**  
-  \[
-  units_d = \sum_{t \in day(d)} quantity_t
-  \]
 
-- **AOV (average order value)**  
-  \[
-  aov_d = \frac{revenue_d}{txns_d}
-  \]
+<img width="289" height="73" alt="Screenshot 2026-01-31 at 15-42-20 GitHub Profile Analysis" src="https://github.com/user-attachments/assets/b281c016-a097-46f1-955d-cd4e06c64e78" />
+
+- **AOV (average order value)**
+
+<img width="213" height="66" alt="Screenshot 2026-01-31 at 15-42-32 GitHub Profile Analysis" src="https://github.com/user-attachments/assets/cde36992-51c7-4e29-911d-fdd58fd716ae" />
+
   (Implementation uses mean of transaction totals; with unique `Transaction ID` this aligns with the concept.)
 
 I also create calendar fields:
@@ -222,11 +219,10 @@ This is intentionally:
 - stable for small datasets
 - good enough for removing first-order seasonality
 
-Formally, expected revenue for day \( d \) is:
+Formally, expected revenue is:
 
-\[
-\hat{y}_d = E[revenue \mid month(d), dow(d)]
-\]
+<img width="427" height="60" alt="Screenshot 2026-01-31 at 15-42-51 GitHub Profile Analysis" src="https://github.com/user-attachments/assets/252cc2f1-3ad2-42cf-aa63-3ba5b85a534d" />
+
 with fallbacks as above when cell counts are too small.
 
 ---
@@ -243,9 +239,8 @@ Given daily revenue series \( x \):
 - MAD: \( mad = median(|x - m|) \)
 
 Robust z-score:
-\[
-z = 0.6745 \cdot \frac{x - m}{mad}
-\]
+
+<img width="234" height="63" alt="Screenshot 2026-01-31 at 15-43-07 GitHub Profile Analysis" src="https://github.com/user-attachments/assets/857b3e30-bd33-4fba-b957-7a2cad79f7e2" />
 
 Why robust? Because retail revenue is often heavy-tailed and standard z-scores can be distorted by spikes.
 
@@ -253,14 +248,12 @@ Why robust? Because retail revenue is often heavy-tailed and standard z-scores c
 This isolates “event-like” behavior.
 
 Residual:
-\[
-residual_d = revenue_d - \hat{y}_d
-\]
+
+<img width="307" height="37" alt="Screenshot 2026-01-31 at 15-43-19 GitHub Profile Analysis" src="https://github.com/user-attachments/assets/fcfaad40-f768-4f59-9f80-f714d64d891a" />
 
 I then compute a robust z-score on residuals:
-\[
-z^{resid}_d = robust\_z(residual_d)
-\]
+
+<img width="323" height="45" alt="Screenshot 2026-01-31 at 15-43-30 GitHub Profile Analysis" src="https://github.com/user-attachments/assets/e60eded0-d2db-4e05-9f81-161719051f71" />
 
 **Interpretation:**
 - large positive residual = unusual surge beyond seasonality
